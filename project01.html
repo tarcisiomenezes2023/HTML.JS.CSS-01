@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+    background-color: rgb(70, 142, 236);
+    font: normal 15pt Arial;
+}
+
+header {
+    color: white;
+    text-align: center;
+}
+
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 5px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.40);
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
+
+div#photo img {
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+}
+
+div {
+    text-align: center;
+    padding: 8px;
+}
+
+
+    </style>
+</head>
+<body onload="load()">
+    <header>
+        <h1>Time of the Day</h1>
+    </header>
+    <section>
+        <div id="msg">
+            Here you will see the time...
+        
+        </div>
+        <div id="photo">
+            <img id="Image" src="pexels-edward-eyer-2228889.jpg" alt="Image of the Day">
+            
+        </div>
+    </section>
+    <footer>
+        <p>By Tarcísio Menezes - <a href="https://github.com/tarcisiomenezes2023" target="_blank">Github</a></p>
+    </footer>
+
+    <script>
+        alert('Hi! Welcome!')
+function load() {
+var msg = window.document.getElementById('msg')
+var img = window.document.getElementById('Image')
+var data = new Date()
+var time = data.getHours() 
+msg.innerHTML = 'Now it is <strong>' + time + ' hours</strong>'
+if (time >= 0 && time < 12  ) {
+    /* msg.innerHTML = '<strong>Good Morning!</strong>' */
+    img.src = 'pexels-edward-eyer-2228889.jpg'
+    document.body.style.background = '#e2cd9f'
+} else if (time >= 12 && time < 18) {
+     /* msg.innerHTML = 'Good Afternoon!' */
+    img.src = 'pexels-andrea-piacquadio-3778569.jpg'
+    document.body.style.background = '#b9846f'
+}
+else {
+    /* msg.innerHTML = 'Good Evening!' */
+    img.src = 'pexels-cottonbro-studio-4069291.jpg'
+    document.body.style.background = '#515154'
+}
+
+}
+    </script>
+    
+</body>
+</html>
